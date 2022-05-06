@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import shuffle from 'underscore/modules/shuffle';
 import data from './data';
+import LoremText from './LoremText';
 function App() {
   const [count, setCount] = useState(1);
   const [text, setText] = useState([]);
@@ -33,11 +34,7 @@ function App() {
           generate
         </button>
       </form>
-      <article className='lorem-text'>
-        {text.map((item, index) => (
-          <p key={index}>{item}</p>
-        ))}
-      </article>
+      <LoremText text={text} />
     </section>
   );
 }
